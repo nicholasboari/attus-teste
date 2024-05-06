@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class ResourceExceptionHandler {
 
-    @ExceptionHandler(BadRequestException.class)
-    public ResponseEntity<StandardError> badRequest(BadRequestException e, HttpServletRequest request) {
-        HttpStatus status = HttpStatus.BAD_REQUEST;
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<StandardError> notFound(ResourceNotFoundException e, HttpServletRequest request) {
+        HttpStatus status = HttpStatus.NOT_FOUND;
         StandardError error = StandardError.builder()
                 .message(e.getMessage())
                 .error("Not found")
@@ -23,12 +23,12 @@ public class ResourceExceptionHandler {
         return ResponseEntity.status(status).body(error);
     }
 
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<StandardError> notFound(ResourceNotFoundException e, HttpServletRequest request) {
+    @ExceptionHandler(ResourceConflictException.class)
+    public ResponseEntity<StandardError> conflict(ResourceConflictException e, HttpServletRequest request) {
         HttpStatus status = HttpStatus.BAD_REQUEST;
         StandardError error = StandardError.builder()
                 .message(e.getMessage())
-                .error("Not found")
+                .error("Conflict")
                 .path(request.getRequestURI())
                 .status(status.value())
                 .timestamp(System.currentTimeMillis())

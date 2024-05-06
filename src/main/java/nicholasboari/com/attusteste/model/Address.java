@@ -21,7 +21,7 @@ public class Address {
     private String zipCode;
     private String number;
     private String publicPlace;
-    private Boolean main;
+    private Boolean primaryAddress;
 
     @Enumerated(EnumType.STRING)
     private BrazilStatesEnum state;

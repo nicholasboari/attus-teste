@@ -5,14 +5,14 @@ import nicholasboari.com.attusteste.dto.request.CreateAddressRequestDTO;
 import nicholasboari.com.attusteste.dto.request.UpdateAddressRequestDTO;
 import nicholasboari.com.attusteste.dto.response.AddressResponseDTO;
 import nicholasboari.com.attusteste.dto.response.CreateAddressResponseDTO;
-import nicholasboari.com.attusteste.dto.response.PersonResponseDTO;
 import nicholasboari.com.attusteste.dto.response.UpdateAddressResponseDTO;
+import nicholasboari.com.attusteste.exception.ResourceConflictException;
 import nicholasboari.com.attusteste.exception.ResourceNotFoundException;
 import nicholasboari.com.attusteste.model.Address;
-import nicholasboari.com.attusteste.model.Person;
 import nicholasboari.com.attusteste.repository.AddressRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +24,12 @@ public class AddressService {
     private final ModelMapper mapper;
 
     public CreateAddressResponseDTO create(CreateAddressRequestDTO request) {
+        Page<AddressResponseDTO> addresses = findByPersonID(PageRequest.of(0, 20), request.getPersonID());
+        if (request.getPrimaryAddress()) {
+            addresses.forEach(address -> {
+                if (address.getPrimaryAddress()) throw new ResourceConflictException("There is already a main address");
+            });
+        }
         Address address = mapper.map(request, Address.class);
         return mapper.map(repository.save(address), CreateAddressResponseDTO.class);
     }
