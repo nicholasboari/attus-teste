@@ -1,5 +1,6 @@
 package nicholasboari.com.attusteste.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,6 +26,7 @@ public class Address {
     @Enumerated(EnumType.STRING)
     private BrazilStatesEnum state;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Person person;
