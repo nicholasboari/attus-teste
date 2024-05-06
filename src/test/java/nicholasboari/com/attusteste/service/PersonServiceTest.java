@@ -39,10 +39,10 @@ class PersonServiceTest {
     @Mock
     private ModelMapper modelMapper;
 
-    private CreatePersonResponseDTO createPersonResponseDTO;
-    private CreatePersonRequestDTO createPersonRequestDTO;
+    CreatePersonResponseDTO createPersonResponseDTO;
+    CreatePersonRequestDTO createPersonRequestDTO;
     PersonResponseDTO personResponseDTO;
-    private Person person;
+    Person person;
 
     @BeforeEach
     void setup(){

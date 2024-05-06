@@ -54,8 +54,8 @@ public class AddressController {
     }
 
     @PutMapping
-    public ResponseEntity<UpdateAddressResponseDTO> update(@Valid @RequestBody UpdateAddressRequestDTO request){
-        UpdateAddressResponseDTO response = service.update(request);
+    public ResponseEntity<AddressResponseDTO> update(@Valid @RequestBody UpdateAddressRequestDTO request){
+        AddressResponseDTO response = service.update(request);
         LOGGER.info("Received request to update an address");
         return ResponseEntity.ok(response);
     }

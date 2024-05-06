@@ -51,9 +51,9 @@ public class AddressService {
         return all.map(address -> mapper.map(address, AddressResponseDTO.class));
     }
 
-    public UpdateAddressResponseDTO update(UpdateAddressRequestDTO request) {
+    public AddressResponseDTO update(UpdateAddressRequestDTO request) {
         findByID(request.getId());
         Address address = mapper.map(request, Address.class);
-        return mapper.map(repository.save(address), UpdateAddressResponseDTO.class);
+        return mapper.map(repository.save(address), AddressResponseDTO.class);
     }
 }

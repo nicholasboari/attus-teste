@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import nicholasboari.com.attusteste.model.BrazilStatesEnum;
@@ -15,6 +16,7 @@ import org.springframework.lang.NonNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class UpdateAddressRequestDTO {
 
     @NonNull
