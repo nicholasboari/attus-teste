@@ -1,5 +1,6 @@
 package nicholasboari.com.attusteste.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import nicholasboari.com.attusteste.dto.request.CreateAddressRequestDTO;
 import nicholasboari.com.attusteste.dto.request.CreatePersonRequestDTO;
@@ -46,14 +47,14 @@ public class AddressController {
     }
 
     @PostMapping
-    public ResponseEntity<CreateAddressResponseDTO> create(@RequestBody CreateAddressRequestDTO request){
+    public ResponseEntity<CreateAddressResponseDTO> create(@Valid @RequestBody CreateAddressRequestDTO request){
         CreateAddressResponseDTO response = service.create(request);
         LOGGER.info("Received request to create a new address");
         return ResponseEntity.status(HttpStatus.CREATED.value()).body(response);
     }
 
     @PutMapping
-    public ResponseEntity<UpdateAddressResponseDTO> update(@RequestBody UpdateAddressRequestDTO request){
+    public ResponseEntity<UpdateAddressResponseDTO> update(@Valid @RequestBody UpdateAddressRequestDTO request){
         UpdateAddressResponseDTO response = service.update(request);
         LOGGER.info("Received request to update an address");
         return ResponseEntity.ok(response);

@@ -17,12 +17,18 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @Column(name = "cidade", nullable = false)
     private String city;
+    @Column(name = "CEP", nullable = false)
     private String zipCode;
+    @Column(name = "numero", nullable = false)
     private String number;
+    @Column(name = "logradouro", nullable = false, columnDefinition = "TEXT")
     private String publicPlace;
+    @Column(name = "endereco_principal", nullable = false)
     private Boolean primaryAddress;
 
+    @Column(name = "estado", nullable = false)
     @Enumerated(EnumType.STRING)
     private BrazilStatesEnum state;
 

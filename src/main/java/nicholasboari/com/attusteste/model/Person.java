@@ -20,7 +20,9 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @Column(name = "nome", nullable = false)
     private String name;
+    @Column(name = "data_nascimento", nullable = false)
     @JsonFormat(pattern="dd-MM-yyyy")
     private LocalDate birthday;
 
