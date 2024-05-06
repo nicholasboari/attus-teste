@@ -21,9 +21,11 @@ import org.springframework.stereotype.Service;
 public class AddressService {
 
     private final AddressRepository repository;
+    private final PersonService personService;
     private final ModelMapper mapper;
 
     public CreateAddressResponseDTO create(CreateAddressRequestDTO request) {
+        personService.findByID(request.getPersonID());
         Page<AddressResponseDTO> addresses = findByPersonID(PageRequest.of(0, 20), request.getPersonID());
         if (request.getPrimaryAddress()) {
             addresses.forEach(address -> {
