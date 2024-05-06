@@ -4,6 +4,8 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,10 +25,12 @@ public class CreateAddressRequestDTO {
     private String city;
     @NonNull
     @NotEmpty(message = "zipCode cannot be empty")
+    @Pattern(regexp = "\\d{5}-\\d{3}", message = "zipCode must be in the format XXXXX-XXX")
     private String zipCode;
     @NonNull
     @NotEmpty(message = "number cannot be empty")
-    private String number;
+    @Positive
+    private Integer number;
     @NonNull
     @NotEmpty(message = "publicPlace cannot be empty")
     private String publicPlace;

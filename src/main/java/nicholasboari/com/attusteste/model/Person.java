@@ -3,6 +3,7 @@ package nicholasboari.com.attusteste.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,6 +15,7 @@ import java.util.List;
 @Table(name = "tb_person")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Person {
 
     @Id

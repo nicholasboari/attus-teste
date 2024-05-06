@@ -3,6 +3,7 @@ package nicholasboari.com.attusteste.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "tb_address")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Address {
 
     @Id
@@ -22,7 +24,7 @@ public class Address {
     @Column(name = "CEP", nullable = false)
     private String zipCode;
     @Column(name = "numero", nullable = false)
-    private String number;
+    private Integer number;
     @Column(name = "logradouro", nullable = false, columnDefinition = "TEXT")
     private String publicPlace;
     @Column(name = "endereco_principal", nullable = false)

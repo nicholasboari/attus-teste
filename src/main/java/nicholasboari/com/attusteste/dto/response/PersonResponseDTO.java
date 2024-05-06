@@ -1,13 +1,16 @@
 package nicholasboari.com.attusteste.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
+import lombok.*;
 import nicholasboari.com.attusteste.model.Address;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class PersonResponseDTO {
     private String id;
 
