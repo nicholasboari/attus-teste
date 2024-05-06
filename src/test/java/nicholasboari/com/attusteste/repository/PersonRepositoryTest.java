@@ -20,7 +20,7 @@ class PersonRepositoryTest {
     @DisplayName("Save creates person when successful")
     @Test
     void save_PersistPerson_WhenSuccessful(){
-        Person personToBeSaved = PersonCreator.createAValidPersonResponseDTO();
+        Person personToBeSaved = PersonCreator.createAValidPerson();
 
         Person personSaved = this.personRepository.save(personToBeSaved);
 
@@ -34,7 +34,7 @@ class PersonRepositoryTest {
     @DisplayName("Find by ID returns person when exists")
     @Test
     void findById_ReturnsPerson_WhenExists() {
-        Person personToBeSaved = PersonCreator.createAValidPersonResponseDTO();
+        Person personToBeSaved = PersonCreator.createAValidPerson();
         Person savedPerson = personRepository.save(personToBeSaved);
 
         Optional<Person> foundPersonOptional = personRepository.findById(savedPerson.getId());
@@ -54,8 +54,8 @@ class PersonRepositoryTest {
     @DisplayName("Find all returns list of persons")
     @Test
     void findAll_ReturnsListOfPersons() {
-        personRepository.save(PersonCreator.createAValidPersonResponseDTO());
-        personRepository.save(PersonCreator.createAValidPersonResponseDTO());
+        personRepository.save(PersonCreator.createAValidPerson());
+        personRepository.save(PersonCreator.createAValidPerson());
 
         Iterable<Person> allPersons = personRepository.findAll();
 
@@ -65,7 +65,7 @@ class PersonRepositoryTest {
     @DisplayName("Update updates person when successful")
     @Test
     void update_UpdatesPerson_WhenSuccessful() {
-        Person personToBeSaved = PersonCreator.createAValidPersonResponseDTO();
+        Person personToBeSaved = PersonCreator.createAValidPerson();
         Person savedPerson = personRepository.save(personToBeSaved);
 
         savedPerson.setName("Updated Name");
@@ -80,7 +80,7 @@ class PersonRepositoryTest {
     @DisplayName("Delete removes person when successful")
     @Test
     void delete_RemovesPerson_WhenSuccessful() {
-        Person personToBeSaved = PersonCreator.createAValidPersonResponseDTO();
+        Person personToBeSaved = PersonCreator.createAValidPerson();
         Person savedPerson = personRepository.save(personToBeSaved);
 
         personRepository.delete(savedPerson);

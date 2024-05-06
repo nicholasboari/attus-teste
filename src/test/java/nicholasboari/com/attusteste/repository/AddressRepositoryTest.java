@@ -1,9 +1,7 @@
 package nicholasboari.com.attusteste.repository;
 
 import nicholasboari.com.attusteste.model.Address;
-import nicholasboari.com.attusteste.model.Person;
 import nicholasboari.com.attusteste.util.AddressCreator;
-import nicholasboari.com.attusteste.util.PersonCreator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +20,7 @@ class AddressRepositoryTest {
     @DisplayName("Save creates address when successful")
     @Test
     void save_PersistAddress_WhenSuccessful() {
-        Address addressToBeSaved = AddressCreator.createAValidAddressResponseDTO();
+        Address addressToBeSaved = AddressCreator.createAValidAddress();
 
         Address savedAddress = addressRepository.save(addressToBeSaved);
 
@@ -33,7 +31,7 @@ class AddressRepositoryTest {
     @DisplayName("Find by ID returns address when exists")
     @Test
     void findById_ReturnsAddress_WhenExists() {
-        Address addressToBeSaved = AddressCreator.createAValidAddressResponseDTO();
+        Address addressToBeSaved = AddressCreator.createAValidAddress();
         Address savedAddress = addressRepository.save(addressToBeSaved);
 
         Optional<Address> foundAddressOptional = addressRepository.findById(savedAddress.getId());
@@ -53,8 +51,8 @@ class AddressRepositoryTest {
     @DisplayName("Find all returns list of addresses")
     @Test
     void findAll_ReturnsListOfAddresses() {
-        addressRepository.save(AddressCreator.createAValidAddressResponseDTO());
-        addressRepository.save(AddressCreator.createAValidAddressResponseDTO());
+        addressRepository.save(AddressCreator.createAValidAddress());
+        addressRepository.save(AddressCreator.createAValidAddress());
 
         Iterable<Address> allAddresses = addressRepository.findAll();
 
@@ -64,7 +62,7 @@ class AddressRepositoryTest {
     @DisplayName("Update updates address when successful")
     @Test
     void update_UpdatesAddress_WhenSuccessful() {
-        Address addressToBeSaved = AddressCreator.createAValidAddressResponseDTO();
+        Address addressToBeSaved = AddressCreator.createAValidAddress();
         Address savedAddress = addressRepository.save(addressToBeSaved);
 
         savedAddress.setCity("Updated City");
@@ -79,7 +77,7 @@ class AddressRepositoryTest {
     @DisplayName("Delete removes address when successful")
     @Test
     void delete_RemovesAddress_WhenSuccessful() {
-        Address addressToBeSaved = AddressCreator.createAValidAddressResponseDTO();
+        Address addressToBeSaved = AddressCreator.createAValidAddress();
         Address savedAddress = addressRepository.save(addressToBeSaved);
 
         addressRepository.delete(savedAddress);

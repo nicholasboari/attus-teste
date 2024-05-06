@@ -11,7 +11,7 @@ public class UpdateAddressResponseDTO {
     private String id;
     private String city;
     private String zipCode;
-    private String number;
+    private Integer number;
     private String publicPlace;
     private Boolean primaryAddress;
     @Enumerated(EnumType.STRING)
