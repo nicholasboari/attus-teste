@@ -9,5 +9,4 @@ public class AttusTesteApplication {
     public static void main(String[] args) {
         SpringApplication.run(AttusTesteApplication.class, args);
     }
-
 }

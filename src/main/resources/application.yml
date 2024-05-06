@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Attus Gerenciamento de Pessoas
+  profiles:
+    active: test
