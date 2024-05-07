@@ -4,6 +4,7 @@ import nicholasboari.com.attusteste.dto.request.CreatePersonRequestDTO;
 import nicholasboari.com.attusteste.dto.request.UpdatePersonRequestDTO;
 import nicholasboari.com.attusteste.dto.response.CreatePersonResponseDTO;
 import nicholasboari.com.attusteste.dto.response.PersonResponseDTO;
+import nicholasboari.com.attusteste.model.BrazilStatesEnum;
 import nicholasboari.com.attusteste.model.Person;
 
 import java.time.LocalDate;
