@@ -7,6 +7,7 @@
 ## Tecnologias Utilizadas
 
 - Java 17
+- Maven 3.9.6
 - Spring Boot 3.2.5
 - Spring Data
 - Dockerfile
@@ -45,6 +46,24 @@ Não é necessário senha.
 ## Requisições
 
 O arquivo Attus.postman_collection.json disponibiliza os endpoints do projeto.
+
+- Criação de Pessoa:
+
+![image](https://github.com/nicholasboari/attus-teste/assets/44304317/6f45116b-dc7b-4b79-982e-c51e9170cdb3)
+
+- Criação de Endereço:
+
+![image](https://github.com/nicholasboari/attus-teste/assets/44304317/0cc90b99-52fd-4a54-9aa4-78817079c295)
+
+- Retorno de Endereços de uma Pessoa:
+
+![image](https://github.com/nicholasboari/attus-teste/assets/44304317/5f8c0cd2-4db6-497c-9164-156a7efef464)
+
+- Retorno de uma Pessoa cadastrada no sistema:
+
+![image](https://github.com/nicholasboari/attus-teste/assets/44304317/680f2702-bc47-4ec5-bbec-b8a7bba94816)
+
+
 
 ## Documentação
 
