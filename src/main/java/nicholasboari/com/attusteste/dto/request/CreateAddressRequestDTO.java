@@ -30,7 +30,6 @@ public class CreateAddressRequestDTO {
     @Pattern(regexp = "\\d{5}-\\d{3}", message = "zipCode must be in the format XXXXX-XXX")
     private String zipCode;
     @NonNull
-    @NotEmpty(message = "number cannot be empty")
     @Positive
     private Integer number;
     @NonNull

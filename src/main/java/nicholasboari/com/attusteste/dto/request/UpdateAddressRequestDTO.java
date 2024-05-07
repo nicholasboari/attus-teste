@@ -33,7 +33,6 @@ public class UpdateAddressRequestDTO {
     @Pattern(regexp = "\\d{5}-\\d{3}", message = "zipCode must be in the format XXXXX-XXX")
     private String zipCode;
     @NonNull
-    @NotBlank(message = "number is mandatory")
     @Positive
     private Integer number;
     @NonNull
