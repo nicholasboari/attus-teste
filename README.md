@@ -30,6 +30,15 @@
    docker compose up
 
 Obs: O projeto é executado na porta 8080.
+
+## Banco de dados
+
+O banco de dados H2 é um banco em memória, para ter visualizar o sgbd acesse:
+   ```bash
+      http://localhost:8080/h2
+```
+Não é necessário senha.
+
 ## Cobertura de Testes
 ![TestCoverage.png](TestCoverage.png)
 
