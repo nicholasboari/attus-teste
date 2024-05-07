@@ -1,6 +1,7 @@
 package nicholasboari.com.attusteste.util;
 
 import nicholasboari.com.attusteste.dto.request.CreatePersonRequestDTO;
+import nicholasboari.com.attusteste.dto.request.UpdatePersonRequestDTO;
 import nicholasboari.com.attusteste.dto.response.CreatePersonResponseDTO;
 import nicholasboari.com.attusteste.dto.response.PersonResponseDTO;
 import nicholasboari.com.attusteste.model.Person;
@@ -38,6 +39,14 @@ public class PersonCreator {
         return PersonResponseDTO.builder()
                 .id("426f80c0-6c7d-4b2a-9835-199e37e0c5a4")
                 .name("Joao")
+                .birthday(LocalDate.now())
+                .build();
+    }
+
+    public static UpdatePersonRequestDTO updatePersonRequestDTO(){
+        return UpdatePersonRequestDTO.builder()
+                .id("426f80c0-6c7d-4b2a-9835-199e37e0c5a4")
+                .name("Joao2")
                 .birthday(LocalDate.now())
                 .build();
     }
