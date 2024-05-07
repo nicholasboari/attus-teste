@@ -1,10 +1,16 @@
 # Attus Gerenciamento de Pessoas
 
-## Diagrama UML
+Este é um projeto back-end para gerenciamento de pessoas, como inserção, edição e atualização de dados.
+
+### Sobre
+
+O projeto foi desenvolvido no ambiente do Spring com Java, e para armazenamento dos dados, foi utilizado H2 database (em memória). Para simplificar a execução do projeto, foi criado um Dockerfile e um arquivo de configuração Docker compose.
+
+## 📐 Diagrama UML
 
 ![UML.png](UML.png)
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 - Java 17
 - Maven 3.9.6
@@ -15,7 +21,7 @@
 - Swagger
 - H2 Database
 
-## Instalação
+## 🚀 Instalação
 
 1. Clone o repositório:
 
@@ -32,7 +38,7 @@
 
 Obs: O projeto é executado na porta 8080.
 
-## Banco de dados
+## 💿 Banco de dados
 
 O banco de dados H2 é um banco em memória, para ter visualizar o sgbd acesse:
    ```bash
@@ -40,10 +46,10 @@ O banco de dados H2 é um banco em memória, para ter visualizar o sgbd acesse:
 ```
 Não é necessário senha.
 
-## Cobertura de Testes
+## 🧪 Cobertura de Testes
 ![TestCoverage.png](TestCoverage.png)
 
-## Requisições
+## 🌐 Requisições
 
 O arquivo Attus.postman_collection.json disponibiliza os endpoints do projeto.
 
@@ -65,7 +71,7 @@ O arquivo Attus.postman_collection.json disponibiliza os endpoints do projeto.
 
 
 
-## Documentação
+## 📖 Documentação
 
 ![Swagger.png](Swagger.png)
 
