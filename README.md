@@ -33,6 +33,10 @@ Obs: O projeto é executado na porta 8080.
 ## Cobertura de Testes
 ![TestCoverage.png](TestCoverage.png)
 
+## Requisições
+
+O arquivo Attus.postman_collection.json disponibiliza os endpoints do projeto.
+
 ## Documentação
 
 ![Swagger.png](Swagger.png)
